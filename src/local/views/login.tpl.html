@@ -1,0 +1,54 @@
+
+
+<div data-ng-show="!me.action">
+    <button class="btn btn-primary" data-ng-click="me.action = 'login'">Login</button>
+    <button class="btn btn-primary" data-ng-click="me.action = 'signup'">Sign Up</button>
+</div>
+	
+<div class="panel panel-primary" data-ng-show="me.action == 'login'">
+    <div class="panel-heading">Login</div>
+    <div class="panel-body">
+    
+    <form name="loginForm">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <button data-ng-click="me.action = ''" class="btn btn-default">Cancel</button>
+    </form>
+    
+    </div>
+</div>
+
+<div class="panel panel-primary" data-ng-show="me.action == 'signup'">
+    <div class="panel-heading">Signup</div>
+    <div class="panel-body">
+   
+     <form name="loginForm">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="email" class="form-control" id="name" placeholder="Enter name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label for="password1">Password</label>
+            <input type="password" class="form-control" id="password1" placeholder="Enter Password">
+        </div>
+        <div class="form-group">
+            <label for="password2">Re-EnterPassword</label>
+            <input type="password" class="form-control" id="password2" placeholder="Re-Enter Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Create Account</button>
+        <button data-ng-click="me.action = ''" class="btn btn-default">Cancel</button>
+    </form>
+   
+    </div>
+</div>

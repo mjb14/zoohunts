@@ -1,0 +1,192 @@
+<!-- Fixed navbar -->
+<div class="navbar navbar-fixed-top">
+    
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle pull-left" data-toggle="offcanvas" data-ng-class="{'visible-xs': app.displayOptions().hasMenu(), hidden: !app.displayOptions().hasMenu() }" >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--- <img  class="" data-ng-src="{{app.config().getAppBaseUrl()}}/local/img/interlocking_white.png" alt="UB" height="25"> --->
+    <a class="navbar-brand" href="#"> <i class="icon-beer"></i> {{ app.config().data().applicationTitle }}</a> 
+    
+    </div>
+</div>
+<!---
+Extra small devices Phones (<768px)	 
+Small devices Tablets (≥768px)	 
+Medium devices Desktops (≥992px)	 
+Large devices Desktops (≥1200px)
+--->
+
+<!--[if lt IE 9]><div class="no-js"><![endif]-->
+
+    <div class="eas-page">
+    
+      <div class="row row-offcanvas row-offcanvas-left">
+        
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 sidebar-offcanvas" id="sidebar" role="navigation" data-ng-class="{hidden: !app.displayOptions().hasMenu() }" id="sidebar">
+            <div class="sidebar-nav">
+            <div class="list-group">
+                <a  
+                href="#{{item.url}}" 
+                class="list-group-item" 
+                data-eas-prevent-click 
+                data-ng-repeat="item in app.navigation().get2LevelNavigation()" 
+                data-ng-show="app.navigation().isLevel0Module(item.module) || app.navigation().expandNavigationItem(item.parent)"
+                data-ng-click="app.navigation().handleNavigationClick(item.module)" 
+                data-ng-class="{active: app.config().currentModule() == item.module, divider: item.menuDividerRow, level2: !app.navigation().isLevel0Module(item.module), level1: app.navigation().isLevel0Module(item.module) }"
+				>{{ item.title }} 
+                    <i class="icon-caret-right" 
+                        data-ng-show="app.navigation().isLevel0Module(item.module) && item.children.length && !app.navigation().expandNavigationItem(item.module)"></i>
+                    <i class="icon-caret-down" 
+                        data-ng-show="app.navigation().isLevel0Module(item.module) && item.children.length && app.navigation().expandNavigationItem(item.module)"></i>
+                    <span class="badge" data-ng-show="item.badge">{{item.badge}}</span></a>
+            </div>
+            </div>
+        </div>
+        
+        <div class="col-xs-12" data-ng-class="{
+                'col-md-9': app.displayOptions().hasMenu(), 
+                'col-md-12': !app.displayOptions().hasMenu(),
+                'col-sm-9': app.displayOptions().hasMenu(), 
+                'col-sm-12': !app.displayOptions().hasMenu(),
+                'col-lg-9': app.displayOptions().hasMenu(), 
+                'col-lg-12': !app.displayOptions().hasMenu()}
+            ">
+            <div>
+                <div data-ng-show="app.displayOptions().hasNotes()">
+                    <div class="important-notes">
+                            <h4>Important Notes</h4>
+                            <ul>
+                                <li data-ng-repeat="note in app.notes().getGlobalNotes()">{{ note }}</li>
+                                <li data-ng-repeat="note in app.notes().getRouteNotes()">{{ note }}</li>
+                            </ul>
+                    </div>
+                </div>
+                <div class="alert alert-danger hidden" id="error-placeholder"></div>
+                <div data-ng-view >Loading...</div>
+            </div>
+        </div><!--/span-->
+    </div><!--/row-->
+
+      
+      
+      
+      
+    
+    <!---
+     <div class="row">
+        <div  data-ng-class="{'col-lg-2': app.displayOptions().hasMenu(), hidden: !app.displayOptions().hasMenu(), 'hidden-xs': app.displayOptions().hasMenu()  }" >
+            <div class="list-group">
+                <a  
+                href="#{{item.url}}" 
+                class="list-group-item" 
+                data-eas-prevent-click 
+                data-ng-repeat="item in app.navigation().get2LevelNavigation()" 
+                data-ng-show="app.navigation().isLevel0Module(item.module) || app.navigation().expandNavigationItem(item.parent)"
+                data-ng-click="app.navigation().handleNavigationClick(item.module)" 
+                data-ng-class="{active: app.config().currentModule() == item.module, divider: item.menuDividerRow, level2: !app.navigation().isLevel0Module(item.module), level1: app.navigation().isLevel0Module(item.module) }"
+				>{{ item.title }} 
+                    <i class="icon-caret-right" 
+                        data-ng-show="app.navigation().isLevel0Module(item.module) && item.children.length && !app.navigation().expandNavigationItem(item.module)"></i>
+                    <i class="icon-caret-down" 
+                        data-ng-show="app.navigation().isLevel0Module(item.module) && item.children.length && app.navigation().expandNavigationItem(item.module)"></i>
+                    <span class="badge" data-ng-show="item.badge">{{item.badge}}</span></a>
+            </div>
+        </div>
+        
+        
+        <div data-ng-class="{'col-lg-10': app.displayOptions().hasMenu(), 'col-lg-12': !app.displayOptions().hasMenu()}">
+            <div data-ng-show="app.displayOptions().hasNotes()">
+                <div class="important-notes">
+                        <h4>Important Notes</h4>
+                        <ul>
+                            <li data-ng-repeat="note in app.notes().getGlobalNotes()">{{ note }}</li>
+                            <li data-ng-repeat="note in app.notes().getRouteNotes()">{{ note }}</li>
+                        </ul>
+                </div>
+            </div>
+            
+            <div class="alert alert-danger hidden" id="error-placeholder"></div>
+            <div data-ng-view >Loading...</div>
+            
+        
+            
+        </div>
+      </div>
+      --->
+    </div><!-- end eas-page -->
+    
+<!--[if lt IE 9]></div><![endif]-->    
+
+    <div class="text-center" style="border-top: 1px solid #ccc; margin-top: 1em;">
+        <a href="#">Help</a> | <a href="#">Feedback</a> | <a href="#">Privacy Policy</a> | &copy; <span class="copyright-year">2013</span> University at Buffalo, all rights reserved. 
+    </div>
+
+
+ 
+
+<!-- The loading box -->
+<div id="loading-overlay" data-ng-show="app.config().hasPendingRequests()"></div>
+<div id="loading" data-ng-show="app.config().hasPendingRequests()">
+		<span>Loading...</span>
+		
+</div>
+<!-- End of loading box -->
+
+
+<div data-ng-show="!app.authorized()"></div>
+<div style="display: none">{{ app.visible() }}</div>
+
+
+
+  <div class="modal fade" id="eas-server-error" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Technical Difficulties</h4>
+        </div>
+        <div class="modal-body">
+           <p>
+                An error has occurred.  Technical staff has been notified.  Please wait a few minutes and try the request again.
+        </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  
+   <div class="modal fade" id="eas-shib-error" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Session Has Expired</h4>
+        </div>
+        <div class="modal-body">
+           <p>
+            It appears that your session has expired.  This can happen if the application has been left open for a long period of time.  Please refresh the browser window.
+            </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  
+
+<script type="text/javascript">
+
+
+$(document).ready(function() {
+  $('[data-toggle=offcanvas]').click(function() {
+    $('.row-offcanvas').toggleClass('active');
+  });
+});
+
+</script>

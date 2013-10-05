@@ -1,0 +1,97 @@
+<!-- Fixed navbar -->
+<div class="navbar navbar-fixed-top">
+    
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle pull-left visible-xs" data-toggle="offcanvas">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--- <img  class="" data-ng-src="{{app.config().getAppBaseUrl()}}/local/img/interlocking_white.png" alt="UB" height="25"> --->
+    <a class="navbar-brand" href="#"><i class="icon-group"></i> {{ app.config().data().applicationTitle }}</a> 
+    
+    </div>
+</div>
+
+
+
+    <div class="eas-page">
+    
+      <div class="row row-offcanvas row-offcanvas-left">
+        
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 sidebar-offcanvas" id="sidebar" role="navigation" data-ng-class="{hidden: !app.displayOptions().hasMenu() }" id="sidebar">
+            <div class="sidebar-nav">
+            <div class="list-group">
+                <a  
+                href="#{{item.url}}" 
+                class="list-group-item" 
+                data-eas-prevent-click 
+                data-ng-repeat="item in app.navigation().get2LevelNavigation()" 
+                data-ng-show="app.navigation().isLevel0Module(item.module) || app.navigation().expandNavigationItem(item.parent)"
+                data-ng-click="app.navigation().handleNavigationClick(item.module)" 
+                data-ng-class="{active: app.config().currentModule() == item.module, divider: item.menuDividerRow, level2: !app.navigation().isLevel0Module(item.module), level1: app.navigation().isLevel0Module(item.module) }"
+				>{{ item.title }} 
+                    <i class="icon-caret-right" 
+                        data-ng-show="app.navigation().isLevel0Module(item.module) && item.children.length && !app.navigation().expandNavigationItem(item.module)"></i>
+                    <i class="icon-caret-down" 
+                        data-ng-show="app.navigation().isLevel0Module(item.module) && item.children.length && app.navigation().expandNavigationItem(item.module)"></i>
+                    <span class="badge" data-ng-show="item.badge">{{item.badge}}</span></a>
+            </div>
+            </div>
+        </div>
+        
+        <div class="col-xs-12" data-ng-class="{
+                'col-md-9': app.displayOptions().hasMenu(), 
+                'col-md-12': !app.displayOptions().hasMenu(),
+                'col-sm-9': app.displayOptions().hasMenu(), 
+                'col-sm-12': !app.displayOptions().hasMenu(),
+                'col-lg-9': app.displayOptions().hasMenu(), 
+                'col-lg-12': !app.displayOptions().hasMenu()}
+            ">
+            <div>
+                <div data-ng-show="app.displayOptions().hasNotes()">
+                    <div class="important-notes">
+                            <h4>Important Notes</h4>
+                            <ul>
+                                <li data-ng-repeat="note in app.notes().getGlobalNotes()">{{ note }}</li>
+                                <li data-ng-repeat="note in app.notes().getRouteNotes()">{{ note }}</li>
+                            </ul>
+                    </div>
+                </div>
+                <div class="alert alert-danger hidden" id="error-placeholder"></div>
+                <div data-ng-view >Loading...</div>
+            </div>
+        </div><!--/span-->
+    </div><!--/row-->
+      
+    </div><!-- end eas-page -->
+    
+
+
+
+ 
+
+<!-- The loading box -->
+<div id="loading-overlay" data-ng-show="app.config().hasPendingRequests()"></div>
+<div id="loading" data-ng-show="app.config().hasPendingRequests()">
+		<span>Loading...</span>
+		
+</div>
+<!-- End of loading box -->
+
+
+<div data-ng-show="!app.authorized()"></div>
+<div style="display: none">{{ app.visible() }}</div>
+
+
+
+<script type="text/javascript">
+
+
+$(document).ready(function() {
+  $('[data-toggle=offcanvas]').click(function() {
+    $('.row-offcanvas').toggleClass('active');
+  });
+});
+
+</script>

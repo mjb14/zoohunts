@@ -1,0 +1,430 @@
+        body { 
+                padding-top: 85px; 
+                padding-top: 60px; 
+            }
+
+        
+/*
+ * Off Canvas - for our left flyout menu
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 768px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.1s ease-out;
+  }
+
+  .row-offcanvas-right  .sidebar-offcanvas {
+    right: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left  .sidebar-offcanvas {
+    left: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-right.active {
+    right: 50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%; /* 6 columns */
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%; /* 6 columns */
+  }
+}
+
+#sidebar {
+    background-color: #eeeeee;
+    padding-top: 1em;
+}
+        
+        
+        .navbar-toggle .icon-bar {
+            background-color: #ffffff;
+        }
+
+        .no-js .eas-page {
+            display: none;
+        }
+        
+        .eas-form-table .form-group {
+            margin-bottom: 0;
+        }
+        
+        .btn-submit {
+            visibility: hidden;
+        }
+        
+        .eas-page {
+            margin: 0 1em;
+            min-height: 350px;
+        }
+        
+        .title-bar {
+            border-bottom: 1px solid #cccccc; 
+            margin: 10px 0px;
+            font-family: inherit;
+            font-weight: bold;
+            color: inherit;
+            text-rendering: optimizelegibility;
+            font-size: 24.5px;
+            line-height: 40px;
+        }
+        
+        
+        .panel-action-bar {
+            background-color: #EFF3F6;
+            padding: 10px 15px;
+            margin: -15px -15px 15px;
+            border-bottom: 1px solid #bbb;
+        }
+        
+        .panel-action-footer-bar {
+            background-color: #EFF3F6;
+            padding: 10px 15px;
+            margin: 20px -15px -15px -15px;
+            border-top: 1px solid #bbb;
+        }
+        
+        .panel-key-data-bar {
+            background-color: #FCF8E3;
+            padding: 10px 15px;
+            margin: -15px -15px 15px;
+            border-bottom: 1px solid #bbb;
+        }
+        
+        .tab-pane {
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            padding: 1em;
+        }
+        
+        /*
+        .panel-group .panel-heading {
+            margin: -15px -15px 0 -15px;
+        }
+        
+        .panel-group .panel {
+             padding: 15px 15px 0 15px; 
+        }
+        
+        .in .panel-body {
+            margin-top: 15px;
+        }
+        */
+        
+        /* ----------- START: data grid -------------- */
+        .eas-data-grid {
+            margin-bottom: 0;
+        }
+        
+        
+        body table.eas-data-grid {
+            margin-bottom: 0;
+            -webkit-border-radius:0;
+            -moz-border-radius:0;
+            border-radius:0;
+        }
+
+        .pagination.eas-data-grid {
+            margin: 0;
+            padding-top: 1em;
+            padding-right: 1em;
+        }
+        /* ----------- END: data grid -------------- */
+        
+        
+        /* --------- important notes ---------- */
+        .important-notes {
+            
+            border: 1px solid #666666;
+            background-color: #FFFFFF;
+            padding: 1em;
+            margin-bottom: 1em;
+            
+        }
+
+        .important-notes h4 {
+            color: red;
+        }
+        /* --------- END: important notes ---------- */
+
+        
+        /* ------------ menu related --------------- */
+            .level2 { margin-left: 10px; }
+        
+        /* ------------ END: menu related ------------ */
+        
+        /* ------------ START: pagination tweaks ---------- */
+            .pagination { margin-top: 0; }
+        /* ------------ END: pagination tweaks ---------- */
+        
+        
+        /* -------------------- bootstrap customizations -------------------- */
+        
+ 
+        /* Custom button
+        -------------------------------------------------- */
+
+        /* Override base .btn styles */
+        /* Apply text and background changes to three key states: default, hover, and active (click). */
+        .btn-icon,
+        .btn-icon:hover,
+        .btn-icon:active {
+          color: #333;
+          background-color: #f5f5f5;
+          border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+          border-bottom-color: #b3b3b3;
+        }
+
+        /* Set the hover state */
+        .btn-icon:hover {
+          background-color: #cfcfcf;
+        }
+        
+        /* ---------- START: loading bar ------------- */
+        #loading {
+        width:280px;
+        height:177px;
+        background:url(../img/elements/loading/bg.png);
+
+
+        position:fixed;
+        z-index:999;
+        top:50%;
+        left:50%;
+        margin-top:-88.5px;
+        margin-left:-140px;
+
+        text-align:center;
+        }
+
+        #loading:after {
+
+        display:block;
+        height:32px;
+        width:32px;
+        position:absolute;
+        left:50%;
+        top:68px;
+        margin-left:-16px;
+        margin-top:-16px;
+        background:url(../img/elements/loading/spinner.gif);
+        content:' ';
+
+        }
+
+        #loading-overlayx {
+        position:fixed;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        background: -webkit-radial-gradient(50% 50% , ellipse closest-corner, rgba(0, 0, 0, 0.3) 1%, rgba(0, 0, 0, 0.725) 100%) repeat scroll 0 0 transparent;
+        background: -moz-radial-gradient(50% 50% , ellipse closest-corner, rgba(0, 0, 0, 0.3) 1%, rgba(0, 0, 0, 0.725) 100%) repeat scroll 0 0 transparent;
+        background: -o-radial-gradient(50% 50% , ellipse closest-corner, rgba(0, 0, 0, 0.3) 1%, rgba(0, 0, 0, 0.725) 100%) repeat scroll 0 0 transparent;
+        background: -ms-radial-gradient(50% 50% , ellipse closest-corner, rgba(0, 0, 0, 0.3) 1%, rgba(0, 0, 0, 0.725) 100%) repeat scroll 0 0 transparent;
+        background: radial-gradient(50% 50% , ellipse closest-corner, rgba(0, 0, 0, 0.3) 1%, rgba(0, 0, 0, 0.725) 100%) repeat scroll 0 0 transparent;
+        z-index:998;
+        }
+
+        #loading span {
+        display:inline-block;
+        position:relative;
+        top:123px;
+        }
+
+        .lt-ie9 .ui-widget-overlay,.lt-ie9 #loading-overlay {
+        background:#000;
+        -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+        filter:alpha(opacity=60);
+        }
+        /* ---------- END: loading bar ------------- */
+
+
+        .error-block.alert {
+            margin-bottom: 0;
+        }
+        
+        
+        /* ------ search icon on typeahead fields --- */
+        .typeahead-search {
+            position: relative;
+        }
+          
+        .typeahead-search .typeahead-query {
+            padding-left: 29px;
+            padding-right: 29px;
+        }
+
+        .typeahead-search .icon-search {
+            position: absolute;
+            top: 12px;
+            left: 11px;
+           /* background-image: url("http://twitter.github.com/bootstrap/assets/img/glyphicons-halflings.png");*/
+        }
+        
+        .typeahead-search .icon-spinner {
+            position: absolute;
+            top: 12px;
+            right: 11px;
+           /* background-image: url("http://twitter.github.com/bootstrap/assets/img/glyphicons-halflings.png");*/
+        }
+        /* ------ END: search icon on typeahead fields --- */
+        
+        /* ------ START: show a spinner for a field that is loading --- */
+        .field-loader {
+            position: relative;
+        }
+        .field-loader .icon-spinner {
+            display: none; 
+            position: absolute;
+            top: 12px;
+            right: 11px;
+        }
+        .field-loader.is-loading .icon-spinner {
+            display: inline;
+        }
+        .field-loader.is-loading input, .field-loader.is-loading select {
+            filter:alpha(opacity=20); /* IE */
+            -moz-opacity:0.2; /* Mozilla */
+            opacity: 0.2; /* CSS3 */
+        }
+        
+        /* ------ END: show a spinner for a field that is loading --- */        
+        
+        
+        .pending-delete {
+            text-decoration: line-through;
+        }
+
+
+        .box {
+            border-radius: 2px;
+            border: 1px solid #b9b9b9;
+            box-shadow: 0 1px 0px rgba(0,0,0,0.11);
+            padding: 1em;
+        }
+
+        
+        /* -------- START: key data ------ */
+        .key-data.box {
+                margin-bottom: 0;
+                background-color: #EFF3F6;
+                padding: .5em;
+}
+
+        .key-data-detail {
+            background-color: #FCF8E3;
+            font-size: .9em;
+        }
+        /* -------- END: key data ------- */
+ 
+        
+        /* ----- START: Header Bar ----- */
+        /* http://www.buffalo.edu/toolbox/graphic/colors.php */
+        .navbar {
+            /* background-color: #394455;  041A9B*/
+            background-color: #394455;
+        }
+        
+        .navbar-brand {
+            color: #EEEEEE;
+            max-width: 500px;
+        }
+        /* ----- END: Header Bar ----- */
+        
+        /* ----- START: Primary panel modifications ----- */
+        .panel-primary {
+            border-color: #809DC4; /* 666666 */
+        }
+        
+        .panel-primary .panel-heading {
+            background-color: #809DC4;
+            border-color: #809DC4;
+        }
+        /* ----- END: Primary panel modifications ----- */
+
+        /* ----- START: List modifications ----- */
+        a.list-group-item.active {
+            background-color: #809DC4;
+            border-color: #809DC4;
+        }
+        /* ----- START: List modifications ----- */
+        
+        
+        
+        
+        
+        
+        
+     
+        
+
+        
+        .twitter-typeahead .tt-query,
+.twitter-typeahead .tt-hint {
+  margin-bottom: 0;
+}
+
+.tt-dropdown-menu {
+  min-width: 160px;
+  margin-top: 2px;
+  padding: 5px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0,0,0,.2);
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+          box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+.tt-suggestion {
+  display: block;
+  padding: 3px 20px;
+}
+
+.tt-suggestion.tt-is-under-cursor {
+  color: #fff;
+  background-color: #0081c2;
+  background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
+  background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
+  background-image: -o-linear-gradient(top, #0088cc, #0077b3);
+  background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)
+}
+
+.tt-suggestion.tt-is-under-cursor a {
+  color: #fff;
+}
+
+.tt-suggestion p {
+  margin: 0;
+}
+
+.twitter-typeahead .tt-hint {
+    display: block;
+    height: 38px;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    border: 1px solid transparent;
+}
+        

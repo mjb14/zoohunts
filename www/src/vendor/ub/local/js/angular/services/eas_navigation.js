@@ -16,7 +16,7 @@ angular.module('services.easNavigation', ['services.EASConfig']).factory('EASNav
             activeNav: Config.currentBaseModule(),
 
             getCurrentObject: function() {
-                return EAS.findKey(Config.data().modules, {
+                return QR.findKey(Config.data().modules, {
                     "url": $location.path()
                 });
             },
@@ -45,13 +45,13 @@ angular.module('services.easNavigation', ['services.EASConfig']).factory('EASNav
             },
 
             getModule: function(m) {
-                return EAS.findKey(Config.data().modules, {
+                return QR.findKey(Config.data().modules, {
                     "module": m
                 });
             },
 
             getModuleUrl: function(m) {
-                return EAS.findKey(Config.data().modules, {
+                return QR.findKey(Config.data().modules, {
                     "module": m
                 }).url;
             },
@@ -128,7 +128,7 @@ angular.module('services.easNavigation', ['services.EASConfig']).factory('EASNav
 
 
             isChildNavigationActive: function(module) {
-                var currentModule = EAS.findKey(Config.data().modules, {
+                var currentModule = QR.findKey(Config.data().modules, {
                     "url": $location.path()
                 });
 
@@ -218,14 +218,14 @@ angular.module('services.easNavigation', ['services.EASConfig']).factory('EASNav
             },
 
             setMenuItemBadge: function(module, badge) {
-                var item = EAS.findKey(Config.data().modules, {
+                var item = QR.findKey(Config.data().modules, {
                     "module": module
                 });
                 item.badge = badge;
             },
 
             getMenuItemBadge: function(module) {
-                var item = EAS.findKey(Config.data().modules, {
+                var item = QR.findKey(Config.data().modules, {
                     "module": module
                 });
                 return item.badge ? item.badge : 0;

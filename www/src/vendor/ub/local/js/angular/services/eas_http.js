@@ -29,8 +29,8 @@ angular.module('services.easHttp', [])
                 }
             */
                 // Remove any form errors/messages
-                EAS.removeFormErrors();
-                EAS.removePageError();
+                QR.removeFormErrors();
+                QR.removePageError();
 
                 return response;
 
@@ -52,8 +52,8 @@ angular.module('services.easHttp', [])
                 } else if (response.status == "400") { // Bad request
                     //console.log( response.data.message );
                     //console.log( response.data.validation_messages );
-                    //EAS.showPageError(response.data.message);
-                    EAS.showFormErrors(response.data.validation_messages, response.data.message, EASLabels);
+                    //QR.showPageError(response.data.message);
+                    QR.showFormErrors(response.data.validation_messages, response.data.message, EASLabels);
                 } else if (response.status == "403") { // Forbidden
                     $location.path('not-authorized');
                 } else if (response.status == "404") { // Not Found

@@ -1,5 +1,60 @@
 
 
 <div eas-title-bar></div>
-<p>find hunts</p>
+
+<ul class="nav nav-tabs" id="tabs">
+  <li class="active"><a href="#all" data-toggle="tab">All</a></li>
+  <li><a href="#in-progress" data-toggle="tab">In Progress</a></li>
+  <li><a href="#completed" data-toggle="tab">Completed</a></li>
+</ul>
 		
+<div class="tab-content">
+  <div class="tab-pane active" id="all">
+  
+    <table class="table table-compact">
+    <tr data-ng-repeat="item in available_games">
+    <td>{{ item.title }}</td> 
+    <td>
+        <div data-ng-show="item.start_date && item.completed">
+            <button class="btn btn-default">Replay Game</button>
+        </div>
+        <div data-ng-show="!item.start_date">
+            <button class="btn btn-default">Start Game</button>
+        </div>
+        <div data-ng-show="item.start_date && !item.completed">
+            <button class="btn btn-default">Resume Game</button>
+        </div>
+    </td>
+    </tr>
+    </table>
+  
+  </div>
+  <div class="tab-pane" id="in-progress">
+  
+    <table class="table table-compact">
+    <tr data-ng-repeat="item in available_games" data-ng-show="item.start_date && !item.completed">
+    <td>{{ item.title }}</td> 
+    <td>
+        <button class="btn btn-default">Resume Game</button>
+    </td>
+    </tr>
+    </table>
+
+  
+  </div>
+  <div class="tab-pane" id="completed">
+
+<table class="table table-compact">
+    <tr data-ng-repeat="item in available_games" data-ng-show="item.start_date && item.completed">
+    <td>{{ item.title }}</td> 
+    <td>
+        <button class="btn btn-default">Replay Game</button>
+    </td>
+    </tr>
+    </table>
+
+  
+  </div>
+</div>        
+        
+        

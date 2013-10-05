@@ -55,14 +55,14 @@ configModule.factory('EASConfig', ['$http', '$location', 'httpRequestTracker', '
             },
 
             hide: function(module) {
-                var item = EAS.findKey(projectConfigData.modules, {
+                var item = QR.findKey(projectConfigData.modules, {
                     "module": module
                 });
                 item.visible = 0;
             },
 
             show: function(module) {
-                var item = EAS.findKey(projectConfigData.modules, {
+                var item = QR.findKey(projectConfigData.modules, {
                     "module": module
                 });
                 item.visible = 1;
@@ -81,12 +81,12 @@ configModule.factory('EASConfig', ['$http', '$location', 'httpRequestTracker', '
             },
 
             currentBaseModule: function() {
-                //return EAS.findKey( projectConfigData.modules, {"url": $location.path() }).parent;
+                //return QR.findKey( projectConfigData.modules, {"url": $location.path() }).parent;
                 return $location.path().split("/")[1];
             },
 
             currentModule: function() {
-                //currentModule = EAS.findKey( projectConfigData.modules, {"url": $location.path() }).module;
+                //currentModule = QR.findKey( projectConfigData.modules, {"url": $location.path() }).module;
                 //console.log("current module: " + currentModule);
                 //console.log("no module: " + $location.path().split("/")[1]);
                 //return currentModule ? currentModule : $location.path().split("/")[1];
@@ -104,7 +104,7 @@ configModule.factory('EASConfig', ['$http', '$location', 'httpRequestTracker', '
 
 					// try to look up config information for a module with
 					// provided url	
-					var item = EAS.findKey(projectConfigData.modules, {
+					var item = QR.findKey(projectConfigData.modules, {
 						url: url
 					});
 
@@ -122,7 +122,7 @@ configModule.factory('EASConfig', ['$http', '$location', 'httpRequestTracker', '
 
             pageTitle: function() {
                 // If not generic page, return the corresponding title
-                return EAS.findKey(projectConfigData.modules, {
+                return QR.findKey(projectConfigData.modules, {
                     "module": config.currentModule()
                 }).title;
             },
@@ -203,8 +203,8 @@ configModule.factory('EASConfig', ['$http', '$location', 'httpRequestTracker', '
             // grab our non server specified config data
             _setServerConfig: function() {
                 // Server config no longer coming from server, but being generated right into the homepage template
-                // as JS variable EAS.SERVER_CONFIG_DATA
-                $.extend(true, projectConfigData, EAS.SERVER_CONFIG_DATA);
+                // as JS variable QR.SERVER_CONFIG_DATA
+                $.extend(true, projectConfigData, QR.SERVER_CONFIG_DATA);
 
                 // All our generic modules need to be added to the config data module list.  This way
                 // our methods for getting page title and things of that nature will work on generic pieces.
@@ -252,9 +252,9 @@ configModule.factory('EASConfig', ['$http', '$location', 'httpRequestTracker', '
             */
 
                 // Add on the route prefix
-                EAS.SERVER_CONFIG_DATA.route_prefix = '';
-                if (!EAS.SERVER_CONFIG_DATA.app_base_url.match('acsdev')) {
-                    EAS.SERVER_CONFIG_DATA.route_prefix = EAS.APPLICATION_DATA.applicationName + '/';
+                QR.SERVER_CONFIG_DATA.route_prefix = '';
+                if (!QR.SERVER_CONFIG_DATA.app_base_url.match('acsdev')) {
+                    QR.SERVER_CONFIG_DATA.route_prefix = AR.APPLICATION_DATA.applicationName + '/';
                 }
             },
 
@@ -288,7 +288,7 @@ configModule.factory('EASConfig', ['$http', '$location', 'httpRequestTracker', '
         };
 
         // Load the app specific config
-        config._setApplicationData(EAS.APPLICATION_DATA);
+        config._setApplicationData(QR.APPLICATION_DATA);
 
         // Load the app config from server
         config._setServerConfig();

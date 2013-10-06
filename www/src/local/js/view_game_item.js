@@ -81,6 +81,10 @@ viewGameItemModule.controller('ViewGameItemController', [
     
     $scope.scan_result;
     
+    $scope.setText = function(text) {
+        $scope.scan_result = text;
+    }
+    
     $scope.checkAnswer = function() {
          try {
             var scanner = cordova.require("cordova/plugin/BarcodeScanner");
@@ -103,8 +107,8 @@ viewGameItemModule.controller('ViewGameItemController', [
   
   $('#console').append(result.text);
   
-            $scope.scan_result = result.text;
-             $scope.apply();
+            $scope.setText(result.text);
+             
              
                 /*
                 if (args.format == "QR_CODE") {

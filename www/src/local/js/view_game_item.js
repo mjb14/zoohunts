@@ -85,10 +85,37 @@ viewGameItemModule.controller('ViewGameItemController', [
         
         $scope.$apply(function(){
             
-           // see if its correct
+          // see if its correct
             if( $scope.current_item.qr_answer_code == text ) {
                 $scope.scan_result = 'Correct!';
                 $scope.current_item.is_completed = 1;
+                
+                // store the score
+                    // set score
+                var keepGoing = true;
+                var lastViewedCluePoints = 0;
+                angular.forEach($scope.current_item.clues, function(v,i) {
+                    if( keepGoing ) {                
+                        if( !v.viewed ) {
+                            
+                            if( i == 0 ) {
+                                lastViewedCluePoints = $scope.current_item.clues[0].clue_point_value;
+                            } else {
+                                lastViewedCluePoints = $scope.current_item.clues[i-1].clue_point_value;
+                            }
+                            keepGoing = false;
+                        }
+                    }
+                });
+                
+                $scope.current_item.points = lastViewedCluePoints;
+                
+                 // set the next current item
+                var index = game_instance.pois.indexOf($scope.current_item);
+                if( index < game_instance.pois.length -1 ) {
+                    game_instance.pois[index+1].is_current = 1;
+                    game_instance.pois[index].is_current = 0;
+                }
                 
             } else {
                 $scope.scan_result = 'Incorrect - here is another clue.';
@@ -107,6 +134,33 @@ viewGameItemModule.controller('ViewGameItemController', [
                 $scope.scan_result = 'Correct!';
                 $scope.current_item.is_completed = 1;
                 
+                // store the score
+                    // set score
+                var keepGoing = true;
+                var lastViewedCluePoints = 0;
+                angular.forEach($scope.current_item.clues, function(v,i) {
+                    if( keepGoing ) {                
+                        if( !v.viewed ) {
+                            
+                            if( i == 0 ) {
+                                lastViewedCluePoints = $scope.current_item.clues[0].clue_point_value;
+                            } else {
+                                lastViewedCluePoints = $scope.current_item.clues[i-1].clue_point_value;
+                            }
+                            keepGoing = false;
+                        }
+                    }
+                });
+                
+                $scope.current_item.points = lastViewedCluePoints;
+                
+                 // set the next current item
+                var index = game_instance.pois.indexOf($scope.current_item);
+                if( index < game_instance.pois.length -1 ) {
+                    game_instance.pois[index+1].is_current = 1;
+                    game_instance.pois[index].is_current = 0;
+                }
+                
             } else {
                 $scope.scan_result = 'Incorrect - here is another clue.';
                 console.log($scope.current_item.qr_answer_code);
@@ -116,7 +170,7 @@ viewGameItemModule.controller('ViewGameItemController', [
     }
     
     $scope.checkAnswer2 = function() {
-    $scope.setText2('efsg');
+    $scope.setText2('efg');
     
     }
     

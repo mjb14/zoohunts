@@ -123,7 +123,7 @@ QR.game_instance =   {
                     {
                         clue_id: 1,
                         clue_point_value: 10,
-                        clue_text: 'I grett my counterparts via headbutting.',
+                        clue_text: 'I greet my counterparts via headbutting.',
                         viewed: 1
                     },
                     {

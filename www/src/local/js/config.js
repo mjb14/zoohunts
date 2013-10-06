@@ -103,26 +103,26 @@ QR.game_instance =   {
             {
                 poi_id: 2,
                 name: 'Lion',
-                qr_answer_code: ['xyz'],
+                qr_answer_code: ['efg'],
                 is_completed: 0,
                 is_current: 1,
-                points: 5,
+                points: 0,
                 clues: [
                     {
                         clue_id: 1,
-                        clue_text: 'I am an animal in the artic circle.',
+                        clue_text: 'I am a Lion.',
                         clue_point_value: 10,
                         viewed: 1
                     },
                     {
                         clue_id: 2,
-                        clue_text: 'I have white fur.',
+                        clue_text: 'I can roar.',
                         clue_point_value: 9,
                         viewed: 0
                     },
                     {
                         clue_id: 3,
-                        clue_text: 'I am a bear.',
+                        clue_text: 'Test.',
                         clue_point_value: 8,
                         viewed: 0
                     }
@@ -131,26 +131,26 @@ QR.game_instance =   {
             {
                 poi_id: 3,
                 name: 'Penguin',
-                qr_answer_code: ['xyz'],
+                qr_answer_code: ['abc'],
                 is_completed: 0,
                 is_current: 0,
-                points: 5,
+                points: 0,
                 clues: [
                     {
                         clue_id: 1,
-                        clue_text: 'I am an animal in the artic circle.',
+                        clue_text: 'aaaaaaa.',
                         clue_point_value: 10,
                         viewed: 1
                     },
                     {
                         clue_id: 2,
-                        clue_text: 'I have white fur.',
+                        clue_text: 'bbbbbbbb.',
                         clue_point_value: 9,
                         viewed: 0
                     },
                     {
                         clue_id: 3,
-                        clue_text: 'I am a bear.',
+                        clue_text: 'ccccccccccc.',
                         clue_point_value: 8,
                         viewed: 0
                     }

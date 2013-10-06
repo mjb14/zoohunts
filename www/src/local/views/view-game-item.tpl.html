@@ -5,7 +5,7 @@
 
 <ul class="list-group">
   <li class="list-group-item" data-ng-repeat="item in current_item.clues" data-ng-show="item.viewed">
-  {{ item.clue_text }}
+  {{ $index +1 }}. {{ item.clue_text }}
   </li>
 </ul>
 

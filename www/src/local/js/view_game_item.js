@@ -104,7 +104,8 @@ viewGameItemModule.controller('ViewGameItemController', [
   $('#console').append(result.text);
   
             $scope.scan_result = result.text;
-                
+             $scope.apply();
+             
                 /*
                 if (args.format == "QR_CODE") {
                     window.plugins.childBrowser.showWebPage(args.text, { showLocationBar: false });

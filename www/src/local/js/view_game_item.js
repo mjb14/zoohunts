@@ -84,7 +84,13 @@ viewGameItemModule.controller('ViewGameItemController', [
     $scope.setText = function(text) {
         
         $scope.$apply(function(){
-            $scope.scan_result = text;
+            
+            // see if its correct
+            if( $scope.current_item.qr_answer_code == text ) {
+                $scope.scan_result = 'Success';
+            } else {
+                $scope.scan_result = 'Incorrect - try getting another clue.';
+            }
         });
     }
     
@@ -94,8 +100,7 @@ viewGameItemModule.controller('ViewGameItemController', [
 
             
             scanner.scan( function (result) { 
-
-            
+      
 /*
                 alert("We got a barcode\n" + 
                 "Result: " + result.text + "\n" + 
@@ -108,10 +113,8 @@ viewGameItemModule.controller('ViewGameItemController', [
                     "cancelled: " + result.cancelled + "\n");
   */
   
-            $('#console').append(result.text);
-  
+
             $scope.setText(result.text);
-             
              
                 /*
                 if (args.format == "QR_CODE") {

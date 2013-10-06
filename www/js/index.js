@@ -66,8 +66,8 @@ var app = {
                     "cancelled: " + result.cancelled + "\n");
   */
   
-  document.getElementById("info").innerHTML = result.text;
-                console.log(result);
+            document.getElementById("info").innerHTML = result.text;
+                $('#console').html(result);
                 /*
                 if (args.format == "QR_CODE") {
                     window.plugins.childBrowser.showWebPage(args.text, { showLocationBar: false });
@@ -75,10 +75,10 @@ var app = {
                 */
 
             }, function (error) { 
-                console.log("Scanning failed: ", error); 
+                $('#console').html("Scanning failed: ", error); 
             } );
         } catch (ex) {
-            console.log(ex.message);
+            $('#console').html(ex.message);
         }
     }
 

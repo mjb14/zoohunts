@@ -108,10 +108,10 @@ viewGameItemModule.controller('ViewGameItemController', [
                 */
 
             }, function (error) { 
-                console.log("Scanning failed: ", error); 
+                $('#console').html("Scanning failed: ", error); 
             } );
         } catch (ex) {
-            console.log(ex.message);
+            $('#console').html(ex.message);
         }
         
         

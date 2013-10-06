@@ -9,8 +9,11 @@
   </li>
 </ul>
 
-<button class="btn btn-primary" data-ng-click="scanItem()">Check Answer</button>
+<button class="btn btn-primary" data-ng-click="checkAnswer()">Check Answer</button>
 {{ scan_result }}
+
+<hr>
+<div id="console"></div>
 
 
 <div data-ng-show="!current_item.is_completed">	    	

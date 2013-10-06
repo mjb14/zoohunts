@@ -27,21 +27,15 @@ QR.game_categories = [
 
 QR.available_games = [
     {
-        title: 'Mammal Hunt',
-        game_id: 1,
-        game_instance_id: 1,
-        start_date: '7/5/2013',
-        complete_date: '7/5/2013',
-        auth_code_to_play: ''
-    },
-    {
         title: 'Halloween Hunt',
         game_id: 2,
         game_instance_id: 2,
         start_date: '7/5/2013',
         complete_date: '',
         auth_code_to_play: ''
-    },
+    }
+    /*
+    ,
     {
         title: 'Member Night: 9/10/2013',
         game_id: 2,
@@ -57,6 +51,7 @@ QR.available_games = [
         complete_date: '',
         auth_code_to_play: ''
     },
+    */
 ];
 
 QR.game_instance =   {

@@ -27,7 +27,7 @@ QR.game_categories = [
 
 QR.available_games = [
     {
-        title: 'Halloween Hunt',
+        title: 'General Hunt: 5/1-5/14',
         game_id: 2,
         game_instance_id: 2,
         start_date: '7/5/2013',
@@ -77,19 +77,19 @@ QR.game_instance =   {
                 clues: [
                     {
                         poi_clue_id: 1,
-                        clue_text: 'I am an animal in the artic circle.',
+                        clue_text: 'I live in an icy tundra.',
                         clue_point_value: 10,
                         viewed: 1
                     },
                     {
                         poi_clue_id: 2,
-                        clue_text: 'My skin is black.',
+                        clue_text: 'I have an insulating blubber layer and a water repellent coat.',
                         clue_point_value: 9,
                         viewed: 0
                     },
                     {
                         poi_clue_id: 3,
-                        clue_text: 'When I am an adult, I have 42 teeth.',
+                        clue_text: 'My scientific name is Ursus maritimus.',
                         clue_point_value: 8,
                         viewed: 0
                     },

@@ -75,7 +75,7 @@ QR.game_instance =   {
             {
                 poi_id: 1,
                 name: 'Polar Bear',
-                qr_answer_code: ['xyz'],
+                qr_answer_code: ['HTTP://VQR.MX/RRK5'],
                 is_completed: 1,
                 is_current: 0,
                 points: 5,
@@ -88,14 +88,26 @@ QR.game_instance =   {
                     },
                     {
                         poi_clue_id: 2,
-                        clue_text: 'I have white fur.',
+                        clue_text: 'My skin is black.',
                         clue_point_value: 9,
                         viewed: 0
                     },
                     {
                         poi_clue_id: 3,
-                        clue_text: 'I am a bear.',
+                        clue_text: 'When I am an adult, I have 42 teeth.',
                         clue_point_value: 8,
+                        viewed: 0
+                    },
+                    {
+                        poi_clue_id: 3,
+                        clue_text: 'I can smell something 20 miles away.',
+                        clue_point_value: 7,
+                        viewed: 0
+                    },
+                    {
+                        poi_clue_id: 3,
+                        clue_text: 'I have white fur.',
+                        clue_point_value: 6,
                         viewed: 0
                     }
                 ]
@@ -103,57 +115,70 @@ QR.game_instance =   {
             {
                 poi_id: 2,
                 name: 'Lion',
-                qr_answer_code: ['efg'],
+                qr_answer_code: ['HTTP://VQR.MX/xeMs'],
                 is_completed: 0,
                 is_current: 1,
                 points: 0,
                 clues: [
                     {
                         clue_id: 1,
-                        clue_text: 'I am a Lion.',
                         clue_point_value: 10,
+                        clue_text: 'I grett my counterparts via headbutting.',
                         viewed: 1
                     },
                     {
                         clue_id: 2,
-                        clue_text: 'I can roar.',
+                        clue_text: 'In Asia, I live only in India.',
                         clue_point_value: 9,
                         viewed: 0
                     },
                     {
                         clue_id: 3,
-                        clue_text: 'Test.',
+                        clue_text: 'I am the 2nd largest cat species in the world.',
                         clue_point_value: 8,
+                        viewed: 0
+                    },
+                    {
+                        clue_id: 3,
+                        clue_text: 'Females of my species do most of the hunting.',
+                        clue_point_value: 7,
                         viewed: 0
                     }
                 ]
             },
             {
                 poi_id: 3,
-                name: 'Penguin',
-                qr_answer_code: ['abc'],
+                name: 'Zebra',
+                qr_answer_code: ['HTTP://VQR.MX/lgoM'],
                 is_completed: 0,
                 is_current: 0,
                 points: 0,
                 clues: [
                     {
                         clue_id: 1,
-                        clue_text: 'aaaaaaa.',
+                        clue_text: 'My gestation period is 1 year.',
                         clue_point_value: 10,
                         viewed: 1
                     },
                     {
                         clue_id: 2,
-                        clue_text: 'bbbbbbbb.',
+                        clue_text: 'My scientific name is Equidae Burchelli.',
                         clue_point_value: 9,
                         viewed: 0
                     },
                     {
                         clue_id: 3,
-                        clue_text: 'ccccccccccc.',
+                        clue_text: 'Males of my species are called Stallion.',
                         clue_point_value: 8,
                         viewed: 0
+                    },
+                                        {
+                        clue_id: 3,
+                        clue_text: 'You can tell my mood based on my ears.',
+                        clue_point_value: 7,
+                        viewed: 0
                     }
+
                 ]
             }
         ]

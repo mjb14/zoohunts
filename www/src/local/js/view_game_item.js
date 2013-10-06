@@ -119,8 +119,8 @@ viewGameItemModule.controller('ViewGameItemController', [
                 
             } else {
                 $scope.scan_result = 'Incorrect - here is another clue.';
-                $scope.scan_result = text;
-                console.log($scope.current_item.qr_answer_code);
+                //$scope.scan_result = text;
+                //console.log($scope.current_item.qr_answer_code);
                 $scope.showNextClue();
             }
             
@@ -171,7 +171,7 @@ viewGameItemModule.controller('ViewGameItemController', [
     }
     
     $scope.checkAnswer2 = function() {
-    $scope.setText2('efg');
+        $scope.setText2('efg');
     
     }
     

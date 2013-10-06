@@ -85,13 +85,39 @@ viewGameItemModule.controller('ViewGameItemController', [
         
         $scope.$apply(function(){
             
+           // see if its correct
+            if( $scope.current_item.qr_answer_code == text ) {
+                $scope.scan_result = 'Correct!';
+                $scope.current_item.is_completed = 1;
+                
+            } else {
+                $scope.scan_result = 'Incorrect - here is another clue.';
+                console.log($scope.current_item.qr_answer_code);
+                $scope.showNextClue();
+            }
+            
+        });
+    }
+    
+     $scope.setText2 = function(text) {
+        
+       
             // see if its correct
             if( $scope.current_item.qr_answer_code == text ) {
-                $scope.scan_result = 'Success';
+                $scope.scan_result = 'Correct!';
+                $scope.current_item.is_completed = 1;
+                
             } else {
-                $scope.scan_result = 'Incorrect - try getting another clue.';
+                $scope.scan_result = 'Incorrect - here is another clue.';
+                console.log($scope.current_item.qr_answer_code);
+                $scope.showNextClue();
             }
-        });
+      
+    }
+    
+    $scope.checkAnswer2 = function() {
+    $scope.setText2('efsg');
+    
     }
     
     $scope.checkAnswer = function() {

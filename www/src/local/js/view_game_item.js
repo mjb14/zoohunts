@@ -82,7 +82,10 @@ viewGameItemModule.controller('ViewGameItemController', [
     $scope.scan_result;
     
     $scope.setText = function(text) {
-        $scope.scan_result = text;
+        
+        $scope.$apply(function(){
+            $scope.scan_result = text;
+        });
     }
     
     $scope.checkAnswer = function() {
@@ -105,7 +108,7 @@ viewGameItemModule.controller('ViewGameItemController', [
                     "cancelled: " + result.cancelled + "\n");
   */
   
-  $('#console').append(result.text);
+            $('#console').append(result.text);
   
             $scope.setText(result.text);
              

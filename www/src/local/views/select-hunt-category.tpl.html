@@ -1,5 +1,10 @@
 
 
-<div eas-title-bar></div>
-<p>find hunts</p>
-		
+        
+<div class="list-group ">
+  <span class="list-group-item active">
+    Available Hunt Types
+  </span>
+  <a href="#/view-game-items/1{{}}" class="list-group-item" data-ng-repeat="item in game_categories">{{item.name}} ({{item.descr}})</a>
+  
+</div>

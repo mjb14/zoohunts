@@ -1,5 +1,21 @@
 
 
 <div eas-title-bar></div>
-<p>find hunts</p>
-		
+
+
+<ul class="list-group">
+  <li class="list-group-item" data-ng-repeat="item in current_item.clues" data-ng-show="item.viewed">
+  {{ item.clue_text }}
+  </li>
+</ul>
+
+<div data-ng-show="!current_item.is_completed">	    	
+    <button class="btn btn-primary" data-ng-click="showNextClue()">Get Clue</button>
+</div>
+
+<div data-ng-show="current_item.is_completed">	    	
+    <p>
+        You scored {{ current_item.points }} points for this item.
+    </p>
+    <button class="btn btn-primary" data-ng-click="backToList()">Back to item list</button>
+</div>

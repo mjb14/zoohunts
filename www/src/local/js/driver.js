@@ -15,6 +15,7 @@
         'viewIpHunts',
         'selectHuntCategory',
         'viewGameItems',
+        'viewGameItem',
         'viewScoreBoard',
         ]).config(['$locationProvider', function ($locationProvider) {
 		$locationProvider.html5Mode(false);
@@ -25,9 +26,14 @@
 		- Set the AppSetup service to this scope to pull in the freebies
 		- Set up any app wide methods
 	*/
-	angular.module('app').controller('AppCtrl', ['$scope', 'AppSetup', '$window', 'EASLabels', function($scope, AppSetup, $window, EASLabels) {
+	angular.module('app').controller('AppCtrl', ['$scope', 'AppSetup', '$window', 'EASLabels', '$location', function($scope, AppSetup, $window, EASLabels, $location) {
 		$scope.app = AppSetup;
 
+        $scope.isLoginPage = function() {
+            return ( ($location.path() === '/' || $location.path() === '/login') ? 1 : 0 );
+        }
+        
+        
         var appLabels = {
             application_name: 'Application'
         };

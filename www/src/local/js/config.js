@@ -10,29 +10,58 @@
 
 var QR = QR || {};
 
+QR.game_categories = [
+    {
+        name: 'Young Explorer',
+        descr: 'age < 7'
+    },
+    {
+        name: 'Junior Traveler',
+        descr: 'age 7-13'
+    },
+    {
+        name: 'Trail Blazer',
+        descr: 'age 14+'
+    }
+];
+
 QR.available_games = [
     {
         title: 'Mammal Hunt',
         game_id: 1,
-        completed: 1,
-        start_date: '7/5/2013'
+        game_instance_id: 1,
+        start_date: '7/5/2013',
+        complete_date: '7/5/2013',
+        auth_code_to_play: ''
     },
     {
         title: 'Halloween Hunt',
-        completed: 0,
         game_id: 2,
-        start_date: '7/5/2013'
+        game_instance_id: 2,
+        start_date: '7/5/2013',
+        complete_date: '',
+        auth_code_to_play: ''
     },
     {
         title: 'Member Night: 9/10/2013',
-        completed: 0,
         game_id: 2,
-        start_date: ''
-    }
+        game_instance_id: 3,
+        start_date: '',
+        complete_date: '',
+        auth_code_to_play: 'fun'
+    },
+    {
+        title: 'General: 5/1/13-5/14/13',
+        game_id: 2,
+        start_date: '',
+        complete_date: '',
+        auth_code_to_play: ''
+    },
 ];
 
 QR.game_instance =   {
         title: 'Mammal Hunt',
+        game_instance_id: 2,
         start_time: '',
         end_time: '',
         start_date: '',
@@ -47,34 +76,91 @@ QR.game_instance =   {
                 poi_id: 1,
                 name: 'Polar Bear',
                 qr_answer_code: ['xyz'],
-                complete: 1,
+                is_completed: 1,
+                is_current: 0,
                 points: 5,
                 clues: [
                     {
-                        clue_id: 1,
-                        clue: 'I am an animal in the artic circle.',
-                        point_value: 10,
+                        poi_clue_id: 1,
+                        clue_text: 'I am an animal in the artic circle.',
+                        clue_point_value: 10,
                         viewed: 1
                     },
                     {
-                        clue_id: 2,
-                        clue: 'I have white fur.',
-                        point_value: 9,
+                        poi_clue_id: 2,
+                        clue_text: 'I have white fur.',
+                        clue_point_value: 9,
                         viewed: 0
                     },
                     {
-                        clue_id: 3,
-                        clue: 'I am a bear.',
-                        point_value: 8,
+                        poi_clue_id: 3,
+                        clue_text: 'I am a bear.',
+                        clue_point_value: 8,
                         viewed: 0
                     }
                 ]
             },
+            {
+                poi_id: 2,
+                name: 'Lion',
+                qr_answer_code: ['xyz'],
+                is_completed: 0,
+                is_current: 1,
+                points: 5,
+                clues: [
+                    {
+                        clue_id: 1,
+                        clue_text: 'I am an animal in the artic circle.',
+                        clue_point_value: 10,
+                        viewed: 1
+                    },
+                    {
+                        clue_id: 2,
+                        clue_text: 'I have white fur.',
+                        clue_point_value: 9,
+                        viewed: 0
+                    },
+                    {
+                        clue_id: 3,
+                        clue_text: 'I am a bear.',
+                        clue_point_value: 8,
+                        viewed: 0
+                    }
+                ]
+            },
+            {
+                poi_id: 3,
+                name: 'Penguin',
+                qr_answer_code: ['xyz'],
+                is_completed: 0,
+                is_current: 0,
+                points: 5,
+                clues: [
+                    {
+                        clue_id: 1,
+                        clue_text: 'I am an animal in the artic circle.',
+                        clue_point_value: 10,
+                        viewed: 1
+                    },
+                    {
+                        clue_id: 2,
+                        clue_text: 'I have white fur.',
+                        clue_point_value: 9,
+                        viewed: 0
+                    },
+                    {
+                        clue_id: 3,
+                        clue_text: 'I am a bear.',
+                        clue_point_value: 8,
+                        viewed: 0
+                    }
+                ]
+            }
         ]
     };
 
 QR.APPLICATION_DATA = {
-    applicationTitle: "Zoo Hunts",
+    applicationTitle: "ABC Scavenger Hunts",
     providerId: 1,
     modules: [
                  {
@@ -87,7 +173,7 @@ QR.APPLICATION_DATA = {
                         "module": "find-hunts",
                         "url": "/find-hunts",
                         "visible": 1,
-                        "title": "View Games"
+                        "title": "Hunts"
                 },
                 {
                         "module": "select-hunt-category",
@@ -115,15 +201,15 @@ QR.APPLICATION_DATA = {
                 },
                  {
                         "module": "view-game-item",
-                        "url": "/view-game-items/10",
+                        "url": "/view-game-item/1",
                         "visible": 1,
-                        "title": "view item"
+                        "title": "Item Clues"
                 },
                 {
                         "module": "view-game-items",
-                        "url": "/view-game-items",
+                        "url": "/view-game-items/1",
                         "visible": 1,
-                        "title": "View Game Items"
+                        "title": "Game Items"
                 },
                 {
                         "module": "view-score-board",

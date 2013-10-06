@@ -1,5 +1,26 @@
 
 
 <div eas-title-bar></div>
-<p>find hunts</p>
-		
+
+<div data-ng-show="isGameCompleted()">
+    <p>Congratulations, you have completed the game!  You have unlocked the "First Safari" badge.</p>
+    <p><i class="icon-beer icon-2x"></i></p>
+</div>
+
+<p>
+    Current Score: {{ userScore() }}
+</p>
+
+<table class="table">
+    <tr data-ng-repeat="item in game_instance.pois" data-ng-class="{active: item.is_current}">
+        <td>
+        <i class="icon-question-sign" data-ng-show="!item.is_completed"></i>
+            <span data-ng-show="item.is_completed">
+                <i class="icon-check"></i> {{ item.name }}
+            </span>
+        </td>
+        <td>
+            <button class="btn btn-default" data-ng-class="{disabled: !item.is_current, 'btn-primary': item.is_current, hidden: item.is_completed}" data-ng-click="getPoiClues(item.poi_id)">Get Clues</button>
+        </td>
+    </tr>
+</table>

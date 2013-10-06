@@ -1,11 +1,25 @@
 
-
+{{
+isLoginPage
+}}
 <div data-ng-show="!me.action">
-    <button class="btn btn-primary" data-ng-click="me.action = 'login'">Login</button>
-    <button class="btn btn-primary" data-ng-click="me.action = 'signup'">Sign Up</button>
+    <div class="panel panel-default">
+    <div class="panel-body">
+    Existing user?<br><br>
+    <button class="btn btn-primary btn-block" data-ng-click="me.action = 'login'">Login</button>
+    </div>
+    </div>
+    
+    <div class="panel panel-default">
+    <div class="panel-body">
+    New User?<br><br>
+    <button class="btn btn-primary btn-block" data-ng-click="me.action = 'signup'">Sign Up</button>
+    </div>
+    </div>
 </div>
+
 	
-<div class="panel panel-primary" data-ng-show="me.action == 'login'">
+<div class="panel panel-default" data-ng-show="me.action == 'login'">
     <div class="panel-heading">Login</div>
     <div class="panel-body">
     
@@ -18,14 +32,14 @@
             <label for="exampleInputPassword1">Password</label>
             <input type="password" class="form-control" id="password" placeholder="Password">
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn btn-primary" data-ng-click="tryLogin()">Login</button>
         <button data-ng-click="me.action = ''" class="btn btn-default">Cancel</button>
     </form>
     
     </div>
 </div>
 
-<div class="panel panel-primary" data-ng-show="me.action == 'signup'">
+<div class="panel panel-default" data-ng-show="me.action == 'signup'">
     <div class="panel-heading">Signup</div>
     <div class="panel-body">
    
@@ -46,7 +60,7 @@
             <label for="password2">Re-EnterPassword</label>
             <input type="password" class="form-control" id="password2" placeholder="Re-Enter Password">
         </div>
-        <button type="submit" class="btn btn-primary">Create Account</button>
+        <button type="submit" class="btn btn-primary" data-ng-click="createAccount()">Create Account</button>
         <button data-ng-click="me.action = ''" class="btn btn-default">Cancel</button>
     </form>
    

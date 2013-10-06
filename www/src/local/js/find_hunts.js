@@ -10,8 +10,8 @@ findHuntsModule.config(['$routeProvider', '$locationProvider',
 ]);
 
 findHuntsModule.controller('FindHuntsController', [
-    '$scope', 'Entity', '$q', '$routeParams', 
-    function ($scope, Entity, $q, $routeParams) {
+    '$scope', 'Entity', '$q', '$routeParams', '$location',
+    function ($scope, Entity, $q, $routeParams, $location) {
  
         $scope.available_games = QR.available_games;
         
@@ -30,5 +30,15 @@ findHuntsModule.controller('FindHuntsController', [
         if( hasInProgressHunt($scope.available_games) ) {
             $('#tabs a[href="#in-progress"]').tab('show');
         }
+        
+        $scope.selectGameCategory = function(game_instance_id) {
+            $location.path('/select-hunt-category/' + game_instance_id);
+        }
+
+        $scope.loadGameInstance = function(game_instance_id) {
+            $location.path('/view-game-items/' + game_instance_id);
+        }
+
+        
 }]);
 

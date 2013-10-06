@@ -82,15 +82,12 @@ viewGameItemModule.controller('ViewGameItemController', [
     $scope.scan_result;
     
     $scope.checkAnswer = function() {
-    $('#console').append("check...1");
          try {
             var scanner = cordova.require("cordova/plugin/BarcodeScanner");
 
-            $('#console').append("check...2");
             
             scanner.scan( function (result) { 
 
-            $('#console').append("check...3");
             
 /*
                 alert("We got a barcode\n" + 
@@ -103,6 +100,8 @@ viewGameItemModule.controller('ViewGameItemController', [
                     "format: " + result.format + "\n" +
                     "cancelled: " + result.cancelled + "\n");
   */
+  
+  $('#console').append(result.text);
   
             $scope.scan_result = result.text;
                 

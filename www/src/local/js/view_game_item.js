@@ -82,15 +82,15 @@ viewGameItemModule.controller('ViewGameItemController', [
     $scope.scan_result;
     
     $scope.checkAnswer = function() {
-    console.log("check...1");
+    $('#console').append("check...1");
          try {
             var scanner = cordova.require("cordova/plugin/BarcodeScanner");
 
-            console.log("check...2");
+            $('#console').append("check...2");
             
             scanner.scan( function (result) { 
 
-            console.log("check...3");
+            $('#console').append("check...3");
             
 /*
                 alert("We got a barcode\n" + 
@@ -113,10 +113,10 @@ viewGameItemModule.controller('ViewGameItemController', [
                 */
 
             }, function (error) { 
-                console.log("Scanning failed: ", error); 
+                $('#console').html("Scanning failed: " + error); 
             } );
         } catch (ex) {
-            console.log(ex.message);
+            $('#console').html(ex.message);
         }
         
         

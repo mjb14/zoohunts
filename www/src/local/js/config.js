@@ -76,8 +76,8 @@ QR.game_instance =   {
                 poi_id: 1,
                 name: 'Polar Bear',
                 qr_answer_code: ['HTTP://VQR.MX/RRK5'],
-                is_completed: 1,
-                is_current: 0,
+                is_completed: 0,
+                is_current: 1,
                 points: 5,
                 clues: [
                     {
@@ -117,7 +117,7 @@ QR.game_instance =   {
                 name: 'Lion',
                 qr_answer_code: ['HTTP://VQR.MX/xeMs'],
                 is_completed: 0,
-                is_current: 1,
+                is_current: 0,
                 points: 0,
                 clues: [
                     {
